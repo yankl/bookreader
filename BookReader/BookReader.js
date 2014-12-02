@@ -3426,7 +3426,7 @@ BookReader.prototype.initNavbar = function() {
 //______________________________________________________________________________
 // Initialize the navigation bar when embedded
 BookReader.prototype.initEmbedNavbar = function() {
-    var thisLink = (window.location + '').replace('ui=embed','ui=full'); // IA-specific
+    var thisLink = (window.location + '').replace('?ui=embed',''); // IA-specific
 
     $('#BookReader').append(
         '<div id="BRnav">'
@@ -3956,7 +3956,7 @@ BookReader.prototype.bindNavigationHandlers = function() {
     jIcons.filter('.full').bind('click', function() {
         if (self.ui == 'embed') {
             // $$$ bit of a hack, IA-specific
-            var url = (window.location + '').replace("ui=embed","ui=full");
+            var url = (window.location + '').replace("?ui=embed","");
             window.open(url);
         }
 
